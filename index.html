@@ -80,13 +80,77 @@
       <label>
         Lección
         <select id="lesson">
-          <option value="home">Fila de inicio (ASDF JKLÑ)</option>
-          <option value="top">Fila superior (QWERTY)</option>
-          <option value="bottom">Fila inferior (ZXCVBNM)</option>
-          <option value="punct">Números y puntuación</option>
-          <option value="phrase">Frases cortas</option>
-          <option value="custom">Texto personalizado…</option>
-        </select>
+  <!-- Filas básicas -->
+  <option value="home">Fila de inicio (ASDF JKLÑ)</option>
+  <option value="top">Fila superior (QWERTY)</option>
+  <option value="bottom">Fila inferior (ZXCVBNM)</option>
+
+  <!-- Combinaciones -->
+  <option value="combos1">Combinaciones básicas 1</option>
+  <option value="combos2">Combinaciones básicas 2</option>
+  <option value="combos3">Sílabas (la, le, li, lo, lu…)</option>
+
+  <!-- Números y puntuación -->
+  <option value="punct">Números y puntuación</option>
+  <option value="numbers">Números básicos</option>
+  <option value="symbols">Símbolos variados</option>
+
+  <!-- Acentos -->
+  <option value="accents">Acentos y diéresis</option>
+  <option value="accents_words">Palabras con acentos</option>
+
+  <!-- Palabras comunes -->
+  <option value="common_words1">Palabras frecuentes 1</option>
+  <option value="common_words2">Palabras frecuentes 2</option>
+  <option value="common_words3">Palabras frecuentes 3</option>
+  <option value="common_words4">Palabras frecuentes 4</option>
+
+  <!-- Frases cortas -->
+  <option value="sentence1">Frase corta 1</option>
+  <option value="sentence2">Frase corta 2</option>
+  <option value="sentence3">Frase corta 3</option>
+  <option value="sentence4">Frase corta 4</option>
+  <option value="sentence5">Frase corta 5</option>
+  <option value="sentence6">Frase corta 6</option>
+  <option value="sentence7">Frase corta 7</option>
+  <option value="sentence8">Frase corta 8</option>
+  <option value="sentence9">Frase corta 9</option>
+  <option value="sentence10">Frase corta 10</option>
+
+  <!-- Pangramas -->
+  <option value="pangram1">Pangrama 1</option>
+  <option value="pangram2">Pangrama 2</option>
+  <option value="pangram3">Pangrama 3</option>
+  <option value="pangram4">Pangrama 4</option>
+  <option value="pangram5">Pangrama 5</option>
+
+  <!-- Ritmo -->
+  <option value="rhythm1">Ritmo fila inicio</option>
+  <option value="rhythm2">Ritmo fila superior</option>
+  <option value="rhythm3">Ritmo fila inferior</option>
+  <option value="rhythm4">Ritmo combinado 1</option>
+  <option value="rhythm5">Ritmo sílabas</option>
+
+  <!-- Frecuencias -->
+  <option value="bigrams">Bigramas frecuentes</option>
+  <option value="trigrams">Trigramas frecuentes</option>
+  <option value="digraphs">Dígrafos y combinaciones</option>
+  <option value="endings">Terminaciones comunes</option>
+
+  <!-- Programación -->
+  <option value="prog1">Programación — básicos</option>
+  <option value="prog2">Programación — Hola mundo</option>
+  <option value="prog3">Programación — bucle for</option>
+  <option value="prog4">Programación — función Python</option>
+  <option value="prog5">Programación — función Java</option>
+
+  <!-- Frase clásica -->
+  <option value="phrase">Frase clásica (murciélago)</option>
+
+  <!-- Personalizado -->
+  <option value="custom">Texto personalizado…</option>
+</select>
+
       </label>
       <label>
         Personalizado
@@ -137,12 +201,72 @@
   // Datos: lecciones y teclado ES
   // ----------------------------
   const LESSONS = {
-    home: "a s d f j k l ñ a s d f j k l ñ asdf jklñ asdf jklñ asdf jklñ",
-    top: "q w e r t y u i o p qwertyuiop qwerty uiop",
-    bottom: "z x c v b n m , . zxcvbnm , . zxcvbnm",
-    punct: "1 2 3 4 5 6 7 8 9 0 - = , . ; : ' \" ! ? ( )",
-    phrase: "el veloz murcielago hindu comia feliz cardillo y kiwi"
-  };
+  // Filas básicas
+  home: "a s d f j k l ñ a s d f j k l ñ asdf jklñ asdf jklñ",
+  top: "q w e r t y u i o p qwertyuiop qwerty uiop",
+  bottom: "z x c v b n m , . zxcvbnm , . zxcvbnm",
+
+  // Combinaciones de filas
+  combos1: "asdf jklñ qwer uiop zxcv nm,. asdf jklñ qwer uiop",
+  combos2: "as df jk lñ qw er ui op zx cv nm ,.",
+  combos3: "la le li lo lu ra re ri ro ru ta te ti to tu",
+
+  // Números y puntuación
+  punct: "1 2 3 4 5 6 7 8 9 0 - = , . ; : ' \" ! ? ( )",
+  numbers: "0 1 2 3 4 5 6 7 8 9 10 20 30 40 50 60 70 80 90 100",
+  symbols: "@ # $ % & / ( ) = ? ¿ ¡ * + - _ < > [ ] { }",
+
+  // Acentos y diéresis
+  accents: "á é í ó ú ü ñ Ñ ¡ ¿ áéíóú üñ ¡¿",
+  accents_words: "sofía corazón camión acción pingüino vergüenza español lección",
+
+  // Palabras comunes
+  common_words1: "hola casa perro gato mesa coche tren avión playa río sol luna",
+  common_words2: "padre madre amigo amiga niño niña libro papel lápiz escuela",
+  common_words3: "programa sistema ejemplo función variable objeto clase código datos",
+  common_words4: "tiempo trabajo ciudad comida música deporte juego viaje familia",
+
+  // Frases cortas
+  sentence1: "Hoy es un buen día para practicar mecanografía.",
+  sentence2: "La precisión es más importante que la velocidad al inicio.",
+  sentence3: "Escribe sin mirar el teclado para ganar soltura.",
+  sentence4: "El ritmo constante te dará mejores resultados.",
+  sentence5: "Con paciencia y práctica mejorarás cada día.",
+  sentence6: "Recuerda mantener una postura correcta al escribir.",
+  sentence7: "Los errores corregidos ya no restan precisión.",
+  sentence8: "Respira, relájate y deja que fluya la escritura.",
+  sentence9: "La práctica diaria es la clave del progreso.",
+  sentence10: "Aprender mecanografía es una inversión de futuro.",
+
+  // Pangramas en español
+  pangram1: "El veloz murciélago hindú comía feliz cardillo y kiwi.",
+  pangram2: "Benjamín pidió una bebida de kiwi y fresa; Noé sin vergüenza la más exquisita champaña del menú.",
+  pangram3: "Jovencillo emponzoñado de whisky, ¡qué figurota exhibe!",
+  pangram4: "Exquisito guiso de ave con champiñón, brócoli y kiwi.",
+  pangram5: "Queda gazpacho, fibra, jamón, kiwi y zumo de uva.",
+
+  // Ejercicios de ritmo (patrones repetitivos)
+  rhythm1: "asdf jklñ asdf jklñ asdf jklñ",
+  rhythm2: "qwer uiop qwer uiop qwer uiop",
+  rhythm3: "zxcv nm,. zxcv nm,. zxcv nm,.",
+  rhythm4: "asdf qwer zxcv jklñ uiop nm,. asdf qwer zxcv jklñ",
+  rhythm5: "la le li lo lu sa se si so su ra re ri ro ru",
+
+  // Bigramas y trigramas frecuentes
+  bigrams: "la de en el es un se del por con las los para como una que más",
+  trigrams: "que del ent pre com pro res tra men ción mient ante esta iste",
+
+  // Dígrafos y terminaciones
+  digraphs: "br bl pr pl fr fl tr tl dr cl cr gr gl qu gu ll rr ch ñ",
+  endings: "ción sión mente miento mientos ado ido ar er ir",
+
+  // Programación (para alumnos de informática 😉)
+  prog1: "if else while for function var let const return => {} [] () ; , .",
+  prog2: "print('Hola mundo') console.log('Hola') echo 'Hola';",
+  prog3: "for(let i=0;i<10;i++){console.log(i);}",
+  prog4: "def suma(a,b): return a+b # comentario en Python",
+  prog5: "public static void main(String[] args) { System.out.println('Hola'); }"
+};
 
   const KEYBOARD_LAYOUT = [
     ["esc","1","2","3","4","5","6","7","8","9","0","'","¡","backspace"],
